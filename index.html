@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OCC4M supplementary videos: spatial persistence, temporal identity, containment, viewpoint transfer, and real-world manipulation.">
+  <title>OCC4M — Supplementary Videos</title>
+  <style>
+    :root { color-scheme: light; --ink:#152438; --muted:#536277; --accent:#195ac0; --line:#dbe3ed; --paper:#fff; --wash:#f3f6fa; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:24px; }
+    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:16px; line-height:1.6; color:var(--ink); background:var(--paper); }
+    a { color:var(--accent); text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    :focus-visible { outline:3px solid #dd8900; outline-offset:4px; }
+    .container { width:min(1120px,calc(100% - 48px)); margin-inline:auto; }
+    .skip-link { position:absolute; top:8px; left:16px; padding:8px 14px; background:white; transform:translateY(-160%); z-index:3; }
+    .skip-link:focus { transform:translateY(0); }
+    header { background:#102139; color:#fff; padding:30px 0 35px; }
+    .masthead { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-bottom:24px; }
+    .wordmark { font-size:23px; font-weight:800; letter-spacing:.04em; }
+    .wordmark span { color:#8cbbff; }
+    .eyebrow { font-size:14px; color:#c0cde0; }
+    h1 { font-size:clamp(25px,3.6vw,40px); line-height:1.22; font-weight:650; letter-spacing:-.025em; max-width:970px; margin:0 0 18px; }
+    .intro { max-width:840px; color:#d3ddec; margin:0; font-size:17px; }
+    nav { border-bottom:1px solid var(--line); background:white; }
+    .nav-inner { display:flex; align-items:center; flex-wrap:wrap; gap:8px 28px; padding-block:16px; }
+    nav a { color:var(--ink); font-weight:600; text-decoration:none; }
+    nav a:hover { color:var(--accent); text-decoration:underline; }
+    nav .count { color:var(--muted); font-weight:400; margin-left:5px; }
+    main { padding-top:34px; }
+    section { margin-bottom:56px; }
+    .section-heading { display:flex; gap:16px; align-items:baseline; margin-bottom:8px; }
+    .section-number { font-size:14px; color:var(--accent); font-weight:700; font-variant-numeric:tabular-nums; }
+    h2 { font-size:27px; line-height:1.3; margin:0; letter-spacing:-.02em; }
+    .section-note { color:var(--muted); margin:8px 0 22px; max-width:840px; }
+    .task-links { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .task-links a { border:1px solid var(--line); border-radius:5px; padding:5px 12px; font-size:14px; text-decoration:none; font-weight:600; }
+    .task-links a:hover { background:var(--wash); border-color:#9db6d9; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; align-items:start; }
+    .video-card { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff; scroll-margin-top:24px; }
+    .card-heading { display:flex; align-items:center; gap:11px; min-height:68px; padding:16px 20px; }
+    .badge { flex-shrink:0; font-size:13px; font-weight:750; line-height:1.4; color:var(--accent); background:#edf3fd; border-radius:4px; padding:4px 8px; }
+    h3 { font-size:18px; line-height:1.35; margin:0; font-weight:650; }
+    video { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#080d14; }
+    .video-tools { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; padding:10px 20px; border-bottom:1px solid var(--line); background:var(--wash); font-size:14px; }
+    .video-tools a { margin-left:auto; text-decoration:none; }
+    .video-tools a:hover { text-decoration:underline; }
+    .speed { display:flex; gap:8px; align-items:center; color:var(--muted); }
+    [hidden] { display:none !important; }
+    select { font:inherit; color:var(--ink); border:1px solid #b6c4d5; background:#fff; border-radius:4px; padding:4px 6px; min-height:32px; }
+    .card-copy { padding:17px 20px 21px; }
+    .card-copy p { margin:0; }
+    .card-copy .watch { margin-top:12px; font-size:15px; color:var(--muted); }
+    strong { font-weight:650; }
+    .hardware-grid { display:grid; gap:26px; }
+    .hardware video { aspect-ratio:16/9; max-height:620px; }
+    .hardware .card-copy { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+    .hardware .card-copy .watch { margin:0; }
+    footer { border-top:1px solid var(--line); padding:24px 0 38px; color:var(--muted); font-size:14px; }
+    .footer-inner { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    @media (max-width:720px) { .container { width:calc(100% - 32px); } header { padding:22px 0 28px; } .masthead { padding-bottom:20px; } .intro { font-size:16px; } .grid { grid-template-columns:1fr; gap:22px; } h2 { font-size:24px; } .card-heading { padding:15px 16px; } .card-copy { padding:16px; } .video-tools { padding:10px 16px; } .hardware .card-copy { grid-template-columns:1fr; gap:12px; } .nav-inner { gap:10px 22px; } }
+    @media print { header { color:var(--ink); background:#fff; } .intro,.eyebrow { color:var(--muted); } nav,.task-links,.video-tools,.skip-link { display:none; } .video-card { break-inside:avoid; } }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#simulation">Skip to videos</a>
+  <header>
+    <div class="container">
+      <div class="masthead"><div class="wordmark">OCC<span>4</span>M</div><div class="eyebrow">Supplementary videos</div></div>
+      <h1>Object-Centric 4D Memory for Spatiotemporal Reasoning in Long-Horizon Manipulation</h1>
+      <p class="intro">Remembering where objects were, which objects they are, and what they contain—then grounding that history for manipulation.</p>
+    </div>
+  </header>
+  <nav aria-label="Video sections"><div class="container nav-inner">
+    <a href="#simulation">Simulation <span class="count">7 videos</span></a>
+    <a href="#real-world">Real world <span class="count">2 videos</span></a>
+  </div></nav>
+  <main class="container">
+    <section id="simulation" aria-labelledby="simulation-title">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="simulation-title">Simulation experiments</h2></div>
+      <p class="section-note">Each video illustrates a task requiring information from earlier observations. Watch the initial history before the robot acts; use slower playback to inspect brief events.</p>
+      <div class="task-links" aria-label="Jump to a simulation video">
+        <a href="#T1" aria-label="Jump to T1: Spatial persistence">T1</a>
+        <a href="#T1c" aria-label="Jump to T1c: Viewpoint transfer">T1c</a>
+        <a href="#T2" aria-label="Jump to T2: Temporal identity">T2</a>
+        <a href="#T3" aria-label="Jump to T3: Event history">T3</a>
+        <a href="#T4" aria-label="Jump to T4: Relational persistence">T4</a>
+        <a href="#T5" aria-label="Jump to T5: Cross-view association">T5</a>
+        <a href="#T6" aria-label="Jump to T6: Multi-instance identity">T6</a>
+      </div>
+      <div class="grid">
+      <article class="video-card" id="T1">
+        <div class="card-heading"><span class="badge">T1</span><h3 id="title-T1">Spatial persistence</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T1" aria-describedby="task-T1 note-T1">
+          <source src="videos/T1.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T1.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Spatial persistence"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T1.mp4" aria-label="Open Spatial persistence video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T1"><strong>Task.</strong> Pick the red cube and place it where the green cube was.</p><p class="watch" id="note-T1"><strong>What to watch.</strong> Watch the placement target remain tied to the green cube’s earlier location after it disappears.</p></div>
+      </article>
+      <article class="video-card" id="T1c">
+        <div class="card-heading"><span class="badge">T1c</span><h3 id="title-T1c">Viewpoint transfer</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T1c" aria-describedby="task-T1c note-T1c">
+          <source src="videos/T1c.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T1c.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Viewpoint transfer"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T1c.mp4" aria-label="Open Viewpoint transfer video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T1c"><strong>Task.</strong> Pick the red cube and place it where the green cube was, after the green cube disappears and the robot base moves.</p><p class="watch" id="note-T1c"><strong>What to watch.</strong> Watch the remembered location be grounded from the robot’s new viewpoint.</p></div>
+      </article>
+      <article class="video-card" id="T2">
+        <div class="card-heading"><span class="badge">T2</span><h3 id="title-T2">Temporal identity</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T2" aria-describedby="task-T2 note-T2">
+          <source src="videos/T2.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T2.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Temporal identity"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T2.mp4" aria-label="Open Temporal identity video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T2"><strong>Task.</strong> Place the blue cube at the location of the marker that appeared first, and the red cube at the location of the marker that appeared second.</p><p class="watch" id="note-T2"><strong>What to watch.</strong> Watch the order in which the markers appear; that order determines the two placement targets.</p></div>
+      </article>
+      <article class="video-card" id="T3">
+        <div class="card-heading"><span class="badge">T3</span><h3 id="title-T3">Event history</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T3" aria-describedby="task-T3 note-T3">
+          <source src="videos/T3.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T3.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Event history"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T3.mp4" aria-label="Open Event history video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T3"><strong>Task.</strong> Pick the second cube that moved and place it at the first mover’s pre-motion location.</p><p class="watch" id="note-T3"><strong>What to watch.</strong> Watch which cube moves first and where it was before moving.</p></div>
+      </article>
+      <article class="video-card" id="T4">
+        <div class="card-heading"><span class="badge">T4</span><h3 id="title-T4">Relational persistence</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T4" aria-describedby="task-T4 note-T4">
+          <source src="videos/T4.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T4.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Relational persistence"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T4.mp4" aria-label="Open Relational persistence video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T4"><strong>Task.</strong> Pick the grey cover containing the red cube after the covers are shuffled.</p><p class="watch" id="note-T4"><strong>What to watch.</strong> Follow the cover–object relation through the shuffle, while the cube is hidden.</p></div>
+      </article>
+      <article class="video-card" id="T5">
+        <div class="card-heading"><span class="badge">T5</span><h3 id="title-T5">Cross-view association</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T5" aria-describedby="task-T5 note-T5">
+          <source src="videos/T5.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T5.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Cross-view association"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T5.mp4" aria-label="Open Cross-view association video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T5"><strong>Task.</strong> Pick the green cube from the second table and place it where the green sign appeared on the first table.</p><p class="watch" id="note-T5"><strong>What to watch.</strong> Watch the target location be recalled across views of the two tables. The query color is randomized per episode; this video shows green.</p></div>
+      </article>
+      <article class="video-card" id="T6">
+        <div class="card-heading"><span class="badge">T6</span><h3 id="title-T6">Multi-instance identity</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-T6" aria-describedby="task-T6 note-T6">
+          <source src="videos/T6.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/T6.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Multi-instance identity"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/T6.mp4" aria-label="Open Multi-instance identity video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-T6"><strong>Task.</strong> Drop every cube that was originally red into the left bin and every cube that was originally green into the right bin.</p><p class="watch" id="note-T6"><strong>What to watch.</strong> Watch the original identities determine sorting after the cubes change appearance.</p></div>
+      </article>
+      </div>
+    </section>
+    <section id="real-world" aria-labelledby="real-world-title">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="real-world-title">Real-world experiments</h2></div>
+      <p class="section-note">Franka demonstrations of compositional recall and online target grounding.</p>
+      <div class="hardware-grid">
+      <article class="video-card hardware" id="real_compositional">
+        <div class="card-heading"><span class="badge">Franka</span><h3 id="title-real_compositional">Compositional manipulation</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-real_compositional" aria-describedby="task-real_compositional note-real_compositional">
+          <source src="videos/real_compositional.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/real_compositional.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Compositional manipulation"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/real_compositional.mp4" aria-label="Open Compositional manipulation video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-real_compositional"><strong>Task.</strong> Pick two cups in this order: (1) the cup covering the red cube, and (2) the cup occupying the white mug’s original location.</p><p class="watch" id="note-real_compositional"><strong>What to watch.</strong> The two-stage Franka task combines shuffled-containment recall with historical-location recall.</p></div>
+      </article>
+      <article class="video-card hardware" id="real_shuffle_perturbation">
+        <div class="card-heading"><span class="badge">Franka</span><h3 id="title-real_shuffle_perturbation">Closed-loop grounding under perturbation</h3></div>
+        <video controls preload="metadata" playsinline aria-labelledby="title-real_shuffle_perturbation" aria-describedby="task-real_shuffle_perturbation note-real_shuffle_perturbation">
+          <source src="videos/real_shuffle_perturbation.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="videos/real_shuffle_perturbation.mp4">Open the MP4 video</a>.
+        </video>
+        <div class="video-tools"><label class="speed" hidden>Playback <select aria-label="Playback speed: Closed-loop grounding under perturbation"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><a href="videos/real_shuffle_perturbation.mp4" aria-label="Open Closed-loop grounding under perturbation video">Open video <span aria-hidden="true">↗</span></a></div>
+        <div class="card-copy"><p id="task-real_shuffle_perturbation"><strong>Task.</strong> Pick the cup covering the red cube. During execution, the target cup is displaced.</p><p class="watch" id="note-real_shuffle_perturbation"><strong>What to watch.</strong> Watch the selected target follow the displaced cup without a new VLM query. This is a single perturbation demonstration.</p></div>
+      </article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container footer-inner"><span>OCC4M · Supplementary material</span><a href="#top">Back to top</a></div></footer>
+  <script>
+    // Native video controls and direct MP4 links also work without JavaScript.
+    const videos = Array.from(document.querySelectorAll('video'));
+    for (const video of videos) {
+      const card = video.closest('.video-card');
+      const speed = card.querySelector('select');
+      card.querySelector('.speed').hidden = false;
+      speed.addEventListener('change', () => { video.playbackRate = Number(speed.value); });
+      video.addEventListener('ratechange', () => {
+        const rate = String(video.playbackRate);
+        if (Array.from(speed.options).some(option => option.value === rate)) speed.value = rate;
+      });
+      video.addEventListener('play', () => {
+        for (const other of videos) if (other !== video) other.pause();
+      });
+    }
+  </script>
+</body>
+</html>
